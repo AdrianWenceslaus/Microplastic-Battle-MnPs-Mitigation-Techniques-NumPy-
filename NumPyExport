@@ -1,0 +1,16 @@
+##AdrianW Microplastic Battle
+
+import numpy as np
+from scipy import stats
+
+DATA
+IO = np.array([98, 96, 97, 96, 95, 97, 93, 93, 94, 78])
+OK = np.array([65, 68, 50, 68, 70, 75, 58, 60, 70, 86])
+WDTA = np.array([84, 89, 83, 85, 88, 83, 81, 87, 74, 72])
+
+# ONE-TAILED T-TESTS
+print("IO vs OK:  t =", stats.ttest_ind(IO, OK, alternative='greater').statistic, "p =", stats.ttest_ind(IO, OK, alternative='greater').pvalue)
+print("IO vs WDTA:  t =", stats.ttest_ind(IO, WDTA, alternative='greater').statistic, "p =", stats.ttest_ind(IO, WDTA, alternative='greater').pvalue)
+
+# VS Hypothesis 85% PREDICTION
+print("IO vs 85%:  t =", stats.ttest_1samp(IO, 85, alternative='greater').statistic, "p =", stats.ttest_1samp(IO, 85, alternative='greater').pvalue)
