@@ -1,0 +1,7 @@
+# T-TEST X (IO vs OK)
+res_io_ok = stats.ttest_ind(IO, OK, alternative='greater')
+print(f"IO vs OK:    t = {res_io_ok.statistic:.4f}, p = {res_io_ok.pvalue:.4f}")
+
+# T-TESTS Y (IO vs WDTA)
+res_io_wdta = stats.ttest_ind(IO, WDTA, alternative='greater')
+print(f"IO vs WDTA:  t = {res_io_wdta.statistic:.4f}, p = {res_io_wdta.pvalue:.4f}")
