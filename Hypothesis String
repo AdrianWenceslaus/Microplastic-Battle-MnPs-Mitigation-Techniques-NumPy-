@@ -1,0 +1,2 @@
+res_io_85 = stats.ttest_1samp(IO, 85, alternative='greater')
+print(f"IO vs 85%:   t = {res_io_85.statistic:.4f}, p = {res_io_85.pvalue:.4f}")
